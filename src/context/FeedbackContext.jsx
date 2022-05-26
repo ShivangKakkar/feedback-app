@@ -8,10 +8,10 @@ export const FeedbackProvider = ({ children }) => {
   const [isLoading, setIsLoading] = useState(true)
 
   async function fetchWithTimeout(resource, options = {}) {
-    const { timeout = 3000 } = options
+    // const { timeout = 3000 } = options
 
     const controller = new AbortController()
-    const id = setTimeout(() => controller.abort(), timeout)
+    const id = setTimeout(() => controller.abort(), 3000)
     const response = await fetch(resource, {
       ...options,
       signal: controller.signal,
