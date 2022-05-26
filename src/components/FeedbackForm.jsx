@@ -58,7 +58,7 @@ function FeedbackForm() {
   return (
     <Card>
       <form onSubmit={handleSubmit} action='text'>
-        <h2>How would you rate your service with us</h2>
+        <h2>How would you rate your service with us?</h2>
         <RatingSelect select={(e) => setRating(e)} />
         <div className='input-group'>
           <input
