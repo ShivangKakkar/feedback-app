@@ -24,8 +24,9 @@ export const FeedbackProvider = ({ children }) => {
     // const response = await fetchWithTimeout('feedback?_sort=id&_order=desc')
     // let data = await response.json()
     // if (!data) {
-    data = FeedbackData
+    //   data = FeedbackData
     // }
+    let data = FeedbackData
 
     setFeedback(data)
     setIsLoading(false)
@@ -59,8 +60,9 @@ export const FeedbackProvider = ({ children }) => {
     // let data = await response.json()
 
     // if (!data) {
-    data = newFeedback
+    //   data = newFeedback
     // }
+    let data = newFeedback
 
     setFeedback([data, ...feedback])
   }
@@ -83,8 +85,9 @@ export const FeedbackProvider = ({ children }) => {
     // let data = await response.json()
 
     // if (!data) {
-    data = updatedItem
+    //   data = updatedItem
     // }
+    let data = updatedItem
 
     setFeedback(
       feedback.map((item) => (item.id === id ? { ...item, ...data } : item))
