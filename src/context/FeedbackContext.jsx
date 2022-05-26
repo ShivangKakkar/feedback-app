@@ -32,7 +32,7 @@ export const FeedbackProvider = ({ children }) => {
   }
 
   useEffect(() => {
-    fetchFeedback()
+    fetchFeedback() // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [])
 
   const [feedbackEdit, setFeedbackEdit] = useState({
