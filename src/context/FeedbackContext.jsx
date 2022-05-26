@@ -7,10 +7,6 @@ export const FeedbackProvider = ({ children }) => {
   const [feedback, setFeedback] = useState([])
   const [isLoading, setIsLoading] = useState(true)
 
-  useEffect(() => {
-    fetchFeedback()
-  }, [])
-
   async function fetchWithTimeout(resource, options = {}) {
     const { timeout = 3000 } = options
 
@@ -26,7 +22,7 @@ export const FeedbackProvider = ({ children }) => {
 
   const fetchFeedback = async () => {
     const response = await fetchWithTimeout('feedback?_sort=id&_order=desc')
-    const data = await response.json()
+    let data = await response.json()
     if (!data) {
       data = FeedbackData
     }
@@ -34,6 +30,10 @@ export const FeedbackProvider = ({ children }) => {
     setFeedback(data)
     setIsLoading(false)
   }
+
+  useEffect(() => {
+    fetchFeedback()
+  }, [])
 
   const [feedbackEdit, setFeedbackEdit] = useState({
     item: {},
@@ -56,7 +56,7 @@ export const FeedbackProvider = ({ children }) => {
       },
       body: JSON.stringify(newFeedback),
     })
-    const data = await response.json()
+    let data = await response.json()
 
     if (!data) {
       data = newFeedback
@@ -80,7 +80,7 @@ export const FeedbackProvider = ({ children }) => {
       },
       body: JSON.stringify(updatedItem),
     })
-    const data = await response.json()
+    let data = await response.json()
 
     if (!data) {
       data = updatedItem
