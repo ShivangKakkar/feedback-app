@@ -8,7 +8,11 @@ function AboutPage() {
         <p>This is a React app to leave feedback for a service or a product.</p>
         <p>
           Created by{' '}
-          <a href='https://github.com/StarkBotsIndustries' target='_blank'>
+          <a
+            href='https://github.com/StarkBotsIndustries'
+            target='_blank'
+            rel='noopener'
+          >
             Stark Programmer
           </a>
         </p>
