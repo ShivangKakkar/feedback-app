@@ -11,7 +11,7 @@ function AboutPage() {
           <a
             href='https://github.com/StarkBotsIndustries'
             target='_blank'
-            rel='noopener'
+            rel='noreferrer'
           >
             Stark Programmer
           </a>
