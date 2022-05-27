@@ -21,12 +21,12 @@ export const FeedbackProvider = ({ children }) => {
   // }
 
   const fetchFeedback = async () => {
-    // const response = await fetchWithTimeout('feedback?_sort=id&_order=desc')
-    // let data = await response.json()
-    // if (!data) {
-    //   data = FeedbackData
-    // }
-    let data = FeedbackData
+    const response = await fetch('feedback?_sort=id&_order=desc')
+    let data = await response.json()
+    if (!data) {
+      data = FeedbackData
+    }
+    // let data = FeedbackData
 
     setFeedback(data)
     setIsLoading(false)
@@ -43,26 +43,26 @@ export const FeedbackProvider = ({ children }) => {
 
   const deleteFeedback = async (id) => {
     if (window.confirm('Are you sure you want to delete this feedback?')) {
-      // await fetchWithTimeout(`feedback/${id}`, { method: 'DELETE' })
+      await fetch(`feedback/${id}`, { method: 'DELETE' })
 
       setFeedback(feedback.filter((item) => item.id !== id))
     }
   }
 
   const addFeedback = async (newFeedback) => {
-    // const response = await fetchWithTimeout('feedback', {
-    //   method: 'POST',
-    //   headers: {
-    //     'Content-Type': 'application/json',
-    //   },
-    //   body: JSON.stringify(newFeedback),
-    // })
-    // let data = await response.json()
+    const response = await fetch('feedback', {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify(newFeedback),
+    })
+    let data = await response.json()
 
-    // if (!data) {
-    //   data = newFeedback
-    // }
-    let data = newFeedback
+    if (!data) {
+      data = newFeedback
+    }
+    // let data = newFeedback
 
     setFeedback([data, ...feedback])
   }
@@ -75,19 +75,19 @@ export const FeedbackProvider = ({ children }) => {
   }
 
   const updateFeedback = async (id, updatedItem) => {
-    // const response = await fetchWithTimeout(`feedback/${id}`, {
-    //   method: 'PUT',
-    //   headers: {
-    //     'Content-Type': 'application/json',
-    //   },
-    //   body: JSON.stringify(updatedItem),
-    // })
-    // let data = await response.json()
+    const response = await fetch(`feedback/${id}`, {
+      method: 'PUT',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify(updatedItem),
+    })
+    let data = await response.json()
 
-    // if (!data) {
-    //   data = updatedItem
-    // }
-    let data = updatedItem
+    if (!data) {
+      data = updatedItem
+    }
+    // let data = updatedItem
 
     setFeedback(
       feedback.map((item) => (item.id === id ? { ...item, ...data } : item))
