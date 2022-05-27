@@ -39,6 +39,9 @@ header {
   padding: 40px 50px;
   margin: 20px 0;
   position: relative;
+  display: block;
+  justify-content: space-evenly;
+  column-gap: 10px;
 }
 
 .card.reverse {
@@ -145,6 +148,15 @@ input:focus {
   right: 40px;
 }
 
+.time-display {
+  position: absolute;
+  right: 20px;
+  bottom: 5px;
+  cursor: pointer;
+  background: none;
+  border: none;
+  font-size: 10px;
+}
 .btn {
   color: #fff;
   border: 0;
@@ -190,6 +202,9 @@ input:focus {
 .about-link {
   display: flex;
   justify-content: flex-end;
+  position: relative;
+  right: 15px;
+  bottom: 10px;
 }
 
 /* FIX: Remove position: absolute to keep about icon at the bottom of the
@@ -208,7 +223,7 @@ input:focus {
 }
 
 .about p {
-  margin: 10px 0;
+  margin: 15px 0;
 }
 
 @media (max-width: 600px) {

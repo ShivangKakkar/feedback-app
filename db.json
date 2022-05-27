@@ -3,32 +3,20 @@
     {
       "id": 1,
       "rating": 10,
-      "text": "Feedback Item 1 coming the backend"
+      "text": "Feedback Item 1 coming the backend",
+      "time": "Since Big Bang"
     },
     {
       "id": 2,
       "rating": 9,
-      "text": "Feedback Item 2 coming the backend"
+      "text": "Feedback Item 2 coming the backend",
+      "time": "Since Big Bang"
     },
     {
       "id": 3,
       "rating": 8,
-      "text": "Feedback Item 3 coming the backend"
-    },
-    {
-      "text": "This is a post",
-      "rating": 4,
-      "id": 4
-    },
-    {
-      "text": "We will meet again",
-      "rating": 8,
-      "id": 6
-    },
-    {
-      "text": "This is another test or is it",
-      "rating": 4,
-      "id": 7
+      "text": "Feedback Item 3 coming the backend",
+      "time": "Since Big Bang"
     }
   ]
 }

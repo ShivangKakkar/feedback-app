@@ -10,6 +10,7 @@ function FeedbackForm() {
   const [btnDisabled, setBtnDisabled] = useState(true)
   const [message, setMessage] = useState('')
   const [rating, setRating] = useState(10)
+  const [time, setTime] = useState('')
 
   const { addFeedback, feedbackEdit, updateFeedback } =
     useContext(FeedbackContext)
@@ -34,6 +35,10 @@ function FeedbackForm() {
       setBtnDisabled(false)
     }
     setText(element.target.value)
+    const t = new Date().toLocaleString().replace(',', '')
+    setTime(t)
+    console.log('time', time)
+    // setTime(new Date().toLocaleString().replace(',', ''))
   }
 
   const handleSubmit = (e) => {
@@ -42,7 +47,9 @@ function FeedbackForm() {
       const newFeedback = {
         text,
         rating,
+        time,
       }
+      console.log(newFeedback)
       if (feedbackEdit.edit === true) {
         updateFeedback(feedbackEdit.item.id, newFeedback)
       } else {
@@ -53,6 +60,7 @@ function FeedbackForm() {
     setText('')
     setBtnDisabled(true)
     setRating(10)
+    setTime('')
   }
 
   return (

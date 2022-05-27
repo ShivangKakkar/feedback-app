@@ -12,22 +12,29 @@ function App() {
     <FeedbackProvider>
       <Router>
         <Header />
-        <div className='container'>
-          <Routes>
-            <Route
-              path='/'
-              element={
-                <>
+        <Routes>
+          <Route
+            path='/'
+            element={
+              <>
+                <div className='container'>
                   <FeedbackForm />
                   <FeedbackStats />
                   <FeedbackList />
-                </>
-              }
-            />
-            <Route path='/about' element={<AboutPage />} />
-          </Routes>
-          <AboutIconLink />
-        </div>
+                </div>
+                <AboutIconLink />
+              </>
+            }
+          />
+          <Route
+            path='/about'
+            element={
+              <div className='container'>
+                <AboutPage />
+              </div>
+            }
+          />
+        </Routes>
       </Router>
     </FeedbackProvider>
   )

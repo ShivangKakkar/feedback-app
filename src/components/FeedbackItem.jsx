@@ -21,6 +21,7 @@ function FeedbackItem({ item }) {
         <FaTimes color='purple' />
       </button>
       <div className='text-display'>{item.text}</div>
+      <div className='time-display'>{item.time}</div>
     </Card>
   )
 }
