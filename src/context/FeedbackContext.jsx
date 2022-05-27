@@ -21,7 +21,9 @@ export const FeedbackProvider = ({ children }) => {
   // }
 
   const fetchFeedback = async () => {
-    const response = await fetch('/feedback?_sort=id&_order=desc')
+    const response = await fetch(
+      'https://stark-react.herokuapp.com/feedback?_sort=id&_order=desc'
+    )
     let data = await response.json()
     if (!data) {
       data = FeedbackData
